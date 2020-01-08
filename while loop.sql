@@ -1,16 +1,16 @@
 -- WHILE Loop 
 
 use Joel
-DECLARE @site_value INT =0;
 
-WHILE @site_value <= 10
+DECLARE @site INT =1;
+WHILE @site <= 3
 BEGIN
-   PRINT 'Inside WHILE LOOP on www.TechOnTheNet.com';	-- look in messages not results
-   SET @site_value = @site_value + 1;
+   SELECT 'Result WHILE LOOP ' + 'Loop counter = ' + cast (@site as varchar(40) )
+   -- look in messages not results
+   SET @site = @site + 1;
+   PRINT 'Print Message WHILE LOOP ' + 'Loop counter = ' + cast (@site as varchar(40) )
 END;
 
-PRINT 'Outside WHILE LOOP on www.TechOnTheNet.com';
+PRINT 'End of LOOP'; SELECT 'End of LOOP';
 GO
-
-
 

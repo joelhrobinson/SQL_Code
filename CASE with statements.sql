@@ -1,22 +1,20 @@
 ------
 use Joel
+select * from Products
+
 --- GENERIC CASE 
 select  pName as 'Product Name', price as 'Product Price',
 CASE 
-	when price <= 10				THEN 'Product is Cheap'
-	when price >10 and price < 100	THEN 'Product is Not cheap'
+	when pname = 'Football'				then 'Football'
+	when price <= 10.0					THEN 'Product is < $10'
+	when price >10.0 and price <= 20.0	THEN 'Product is between $10 and $20'
+
 	else 'Product is Expensive'
-	END AS MYOPINION				-- put a label on third column
+	END AS "MY OPINION"				-- put a label on third column
 
 	from Products
+	order by 3
 
---Name		price	MyOpinion
---Baseball	12.98	Product is Not cheap
---Bat		100	Product is Expensive
---Football	15.98	Product is Not cheap
---Soccerball	9.98	Product is Cheap
---Baseballs	100	Product is Expensive
---Bats		100	Product is Expensive
---Footballs	100	Product is Expensive
---Soccerballs	9.98	Product is Cheap
---ballcaps	19.98	Product is Not cheap
+
+
+	

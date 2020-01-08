@@ -1,21 +1,21 @@
 --- Cursor and While Loop
 
 use Joel
-select *  into cardatatemp from cartruckdata
+select *  into tempcardata from cartruckdata
 
-declare vehicleCursor CURSOR for SELECT * from cardatatemp
-open vehicleCursor
+declare rowCursor CURSOR for SELECT * from tempcardata
+open rowCursor
 
-  FETCH NEXT FROM vehicleCursor;	--- Fetch next vehicle
+  FETCH NEXT FROM rowCursor;	--- Fetch next vehicle
 
-declare @mycount int = 0
-WHILE @mycount < 9
+declare @mycount int = 1
+WHILE @mycount < 4
   BEGIN
-    FETCH NEXT FROM vehicleCursor;	--- Fetch next vehicle
+    FETCH NEXT FROM rowCursor;	--- Fetch next vehicle
 	set @mycount = @mycount + 1
 	END
 
 
-CLOSE    vehicleCursor
-DEALLOCATE vehicleCursor
+CLOSE    rowCursor
+DEALLOCATE rowCursor
 

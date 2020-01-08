@@ -3,11 +3,11 @@ use Joel
 
 --- create copy of employee table
 
-select * INTO employeeFixed from Employee;			
+select * INTO tempEmployee from Employee;		-- 	DROP TABLE tempEmployee				---		get rid of the table 	
 
 --- LOOK For bad state codes and Fix
 
-update employeeFixed
+update tempEmployee
 SET StateCode  = CASE StateCode
  WHEN 'Ar' THEN 'AR' 
  WHEN 'AL' THEN 'AL' 
@@ -16,8 +16,8 @@ SET StateCode  = CASE StateCode
  ELSE 'CO'				-- DEFAULT ACTION
   END
 
-  select * from employeeFixed
+  select * from tempEmployee
 
-
-	DROP TABLE employeeFixed				---		get rid of the table
+  
+	DROP TABLE tempEmployee				---		get rid of the table
 

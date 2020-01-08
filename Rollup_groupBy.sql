@@ -20,7 +20,7 @@ select top 9 make, Fuel_Type, AVG(City_MPG) as 'City Fleet Average', AVG(HWY_MPG
 	order by 'City Fleet Average' desc, make
 
 ----------------------------------------------------------
--- ROLLUP METHOD ONE
+-- ROLLUP METHOD ONE SUMS each GROUP 
 select top 9 make, Fuel_Type,  AVG(City_MPG) as 'City Fleet Average', AVG(HWY_MPG) as 'HWY Fleet Average'
 	from temp99
 	GROUP BY ROLLUP (make, Fuel_Type)

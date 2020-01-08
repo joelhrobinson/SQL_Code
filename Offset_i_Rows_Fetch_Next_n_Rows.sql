@@ -8,9 +8,7 @@ use joel
 -- CANNOT USE FETCH w/o OFFSET		in this version of SQL
 -- CANNOT USE FETCH w/o ONLY		in this version of SQL
 
-select * from tCustomer				-- SELECT + OFFSET -- skip the first 3 rows
-	order by age
-	OFFSET 3 rows						
+					
 
 ----------------------------------------------------------------------
 select * from tCustomer				-- SELECT + OFFSET + FETCH
@@ -19,10 +17,12 @@ select * from tCustomer				-- SELECT + OFFSET + FETCH
     FETCH NEXT 5 ROWS ONLY;
 
 SELECT * from tCustomer t			-- SELECT + OFFSET + FETCH + JOIN
-JOIN orders o on  t.ID = o.orderID
+left  JOIN orders o on  t.ID = o.orderID
 	order by age
 	OFFSET 0 rows
     FETCH NEXT 5 ROWS ONLY;
 
 
-
+	select  * from tCustomer				-- SELECT + OFFSET -- skip the first 3 rows
+	order by age
+	OFFSET 3 rows	

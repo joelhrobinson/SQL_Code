@@ -21,5 +21,4 @@ create table temp_primary_key (							--		drop table temp_primary_key
 ---	HOW TO add a primary key after table is already created
 alter table temp_primary_key add primary key 
 drop  table temp_primary_key 
-drop  table myPrimaryKey
 
